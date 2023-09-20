@@ -19,7 +19,6 @@ export class UserJSONService implements UserService {
 
     getById(id: number): User | null {
         const user = JSON.parse(fs.readFileSync('./src/user/users.json', 'utf8')).users;
-        console.log(user[0].id);
         for(let i = 0; i < user.length; i++){
             if (user[i].id === id) {
                 return user[i];
